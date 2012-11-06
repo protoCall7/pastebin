@@ -75,7 +75,7 @@ sub execute {
 #  Call the login method to parse user options and return an API user key.
 #-------------------------------------------------------------------------------
     my $api_user_key =
-        Pastebin::login::login( $opt->{'user'}, $opt->{'pass'} );
+        Pastebin::Login::login( $opt->{'user'}, $opt->{'pass'} );
 
     my $url      = 'http://pastebin.com/api/api_post.php';
     my $referrer = 'http://techmasochism.blogspot.com';
