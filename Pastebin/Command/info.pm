@@ -9,12 +9,14 @@ use 5.010;
 use autodie;
 use LWP::Curl;
 
-sub description {
-	return "Fetch a user's information and settings";
-}
-
 sub opt_spec {
     return ( [ "user|u=s" => "Username" ], [ "pass|p=s" => "Password" ], );
+}
+
+sub validate_args {
+    my ( $self, $opt, $args ) = @_;
+    $self->usage_error("Must provide username and password!")
+      unless ( $opt->{user} && $opt->{pass} );
 }
 
 sub execute {
@@ -37,13 +39,35 @@ sub execute {
 }
 
 =pod
+
 =head1 NAME
 
-Pastebin::Command::info - Fetch a user's information and settings from Pastebin
+Pastebin::Command::info - fetch user's information and settings
 
 =head1 VERSION
 
-version 0.001
+Version 0.1
+
+=head1 USAGE
+
+info -u <user> -p <pass>
+
+=head1 DESCRIPTION
+
+Pastebin::Command::info is an App::Cmd command module used to fetch the user's 
+information and settings from pastebin.com, and return them in XML.  
+
+=head1 AUTHOR
+
+Peter H. Ezetta <protoCall7@gmail.com>
+
+=head1 LICENSE
+
+This software is (c) 2012 Peter H. Ezetta, and is licensed under the 
+BSD 3-clause license.
+
+http://http://opensource.org/licenses/BSD-3-Clause
 
 =cut
+
 1;
