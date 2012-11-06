@@ -23,7 +23,16 @@ use warnings;
 use version; our $VERSION = qv('0.1');
 use ExtUtils::MakeMaker;
 
+my @exe_files = ('bin/pastebin.pl');
+
 WriteMakefile(
     NAME         => 'Pastebin',
     VERSION_FROM => 'lib/Pastebin.pm',
+    EXE_FILES    => \@exe_files,
+    PREREQ_PM    => {
+        "App::Cmd"    => 0,
+        "LWP::Curl"   => 0,
+        "URI::Escape" => 0,
+		"Test::More"  => 0,
+    }
 );

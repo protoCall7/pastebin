@@ -18,10 +18,16 @@
 use strict;
 use warnings;
 
-use Test::More tests => 1;    # last test to print
+use Test::More tests => 3;    # last test to print
 use App::Cmd::Tester;
-use Data::Printer;
 use Pastebin;
 
 my $result = test_app( Pastebin => [qw( )] );
-p $result;
+
+like(
+    $result->stdout,
+    qr/Available commands/,
+    'Return help when called without subcommand'
+);
+is( $result->error, undef, 'Throw no exceptions' );
+is( $result->exit_code, 0, 'Return 0' );

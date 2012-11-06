@@ -21,7 +21,6 @@ use warnings;
 use 5.010;
 use version; our $VERSION = qv('0.1');
 use URI::Escape;
-use Data::Printer;
 use LWP::Curl;
 
 sub login {
