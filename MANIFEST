@@ -6,3 +6,7 @@ lib/Pastebin/Login.pm
 lib/Pastebin/Command/delete.pm
 lib/Pastebin/Command/info.pm
 lib/Pastebin/Command/list.pm
+lib/Pastebin/Command/paste.pm
+lib/Pastebin/Command/raw.pm
+lib/Pastebin/Command/trend.pm
+t/Pastebin.t

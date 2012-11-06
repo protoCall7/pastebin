@@ -25,5 +25,5 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME         => 'Pastebin',
-    VERSION_FROM => 'Pastebin.pm',
+    VERSION_FROM => 'lib/Pastebin.pm',
 );
