@@ -20,9 +20,10 @@ package Pastebin::Command::info;
 use strict;
 use warnings;
 use 5.010;
+use version; our $VERSION = qv('0.0.1');
+use Fatal qw( say );
 use Pastebin -command;
-use Pastebin::login;
-use autodie;
+use Pastebin::Login;
 use LWP::Curl;
 
 #===  FUNCTION  ================================================================
@@ -36,7 +37,7 @@ use LWP::Curl;
 #     SEE ALSO: n/a
 #===============================================================================
 sub opt_spec {
-    return ( [ "user|u=s" => "Username" ], [ "pass|p=s" => "Password" ], );
+    return ( [ 'user|u=s' => 'Username' ], [ 'pass|p=s' => 'Password' ], );
 }
 
 #===  FUNCTION  ================================================================
@@ -51,8 +52,10 @@ sub opt_spec {
 #===============================================================================
 sub validate_args {
     my ( $self, $opt, $args ) = @_;
-    $self->usage_error("Must provide username and password!")
-      unless ( $opt->{user} && $opt->{pass} );
+    $self->usage_error('Must provide username and password!')
+        unless ( $opt->{user} && $opt->{pass} );
+
+    return 1;
 }
 
 #===  FUNCTION  ================================================================
@@ -72,7 +75,8 @@ sub execute {
 #-------------------------------------------------------------------------------
 #  Call the login method to parse user options and return an API user key.
 #-------------------------------------------------------------------------------
-    my $api_user_key = Pastebin::login::login( $opt->{'user'}, $opt->{'pass'} );
+    my $api_user_key =
+        Pastebin::login::login( $opt->{'user'}, $opt->{'pass'} );
 
     my $url      = 'http://pastebin.com/api/api_post.php';
     my $referrer = 'http://techmasochism.blogspot.com';
@@ -80,15 +84,15 @@ sub execute {
 #-------------------------------------------------------------------------------
 #  Create a new cUrl object.  Enable automatic html encoding of parameters.
 #-------------------------------------------------------------------------------
-    my $curl = LWP::Curl->new( "auto_encode" => 1 );
+    my $curl = LWP::Curl->new( 'auto_encode' => 1 );
 
 #-------------------------------------------------------------------------------
 #  Define the parameters to the API POST.
 #-------------------------------------------------------------------------------
     my $hash = {
-        "api_dev_key"  => $api_dev_key,
-        "api_user_key" => $api_user_key,
-        "api_option"   => "userdetails",
+        'api_dev_key'  => $api_dev_key,
+        'api_user_key' => $api_user_key,
+        'api_option'   => 'userdetails',
     };
 
 #-------------------------------------------------------------------------------
@@ -96,7 +100,13 @@ sub execute {
 #-------------------------------------------------------------------------------
     my $content = $curl->post( $url, $hash, $referrer );
     say $content;
+
+    return 1;
 }
+
+1;
+
+__END__
 
 =pod
 
@@ -129,5 +139,3 @@ BSD 3-clause license.
 http://http://opensource.org/licenses/BSD-3-Clause
 
 =cut
-
-1;
