@@ -1,0 +1,3 @@
+use Pastebin;
+
+Pastebin->run;
