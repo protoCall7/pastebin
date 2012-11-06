@@ -3,14 +3,14 @@
 #
 #         FILE: Login.pm
 #
-#  DESCRIPTION: 
+#  DESCRIPTION: Authentication module for the pastebin.com API
 #
 #        FILES: ---
 #         BUGS: ---
 #        NOTES: ---
-#       AUTHOR: Peter H. Ezetta (PE), peter.ezetta@zonarsystems.com
+#       AUTHOR: Peter H. Ezetta (PE), protoCall7@gmail.com
 # ORGANIZATION: 
-#      VERSION: 1.0
+#      VERSION: 0.1
 #      CREATED: 11/06/2012 09:43:16
 #     REVISION: ---
 #===============================================================================
@@ -33,7 +33,9 @@ sub login {
     my $url      = 'http://pastebin.com/api/api_login.php';
     my $referrer = 'http://techmasochism.blogspot.com';
 
-    #Create a new Curl object
+#-------------------------------------------------------------------------------
+#  Create a cUrl object
+#-------------------------------------------------------------------------------
     my $curl = LWP::Curl->new( 'auto_encode' => 1 );
     my $hash_form = {
         'api_dev_key'       => $api_dev_key,
@@ -57,7 +59,7 @@ Pastebin::Login - An authentication module for the Pastebin API
 
 =head1 VERSION
 
-Version 0.1
+This documentation refers to Pastebin::Login version 0.1
 
 =head1 SYNOPSIS
 

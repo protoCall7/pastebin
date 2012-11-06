@@ -3,14 +3,14 @@
 #
 #         FILE: Pastebin.pm
 #
-#  DESCRIPTION:
+#  DESCRIPTION: App::Cmd application class for pastebin.pl
 #
 #        FILES: ---
 #         BUGS: ---
 #        NOTES: ---
-#       AUTHOR: Peter H. Ezetta (PE), peter.ezetta@zonarsystems.com
+#       AUTHOR: Peter H. Ezetta (PE), protoCall7@gmail.com
 # ORGANIZATION:
-#      VERSION: 1.0
+#      VERSION: 0.1
 #      CREATED: 11/06/2012 09:36:08
 #     REVISION: ---
 #===============================================================================
@@ -30,3 +30,14 @@ __END__
 =head1 NAME
 
 Pastebin - application class for the pastebin application
+
+=head1 VERSION
+
+This documentation refers to Pastebin version 0.1.
+
+=head1 SYNOPSIS
+
+	use Pastebin;
+	Pastebin->run();
+
+=cut

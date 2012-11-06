@@ -21,7 +21,6 @@ use strict;
 use warnings;
 use 5.010;
 use version; our $VERSION = qv('0.0.1');
-use Fatal qw( say );
 use Pastebin -command;
 use Pastebin::Login;
 use LWP::Curl;
@@ -99,7 +98,7 @@ sub execute {
 #  Make the POST to the API, and dump the return to the console.
 #-------------------------------------------------------------------------------
     my $content = $curl->post( $url, $hash, $referrer );
-    say $content;
+    say $content or croak("Could not display content: $!");
 
     return 1;
 }
