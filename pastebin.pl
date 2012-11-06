@@ -61,4 +61,32 @@ info command:
 	--user | -u
 	--pass | -p
 
+=head1 DESCRIPTION
+
+=head1 OPTIONS
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+Peter H. Ezetta (PE), protoCall7@gmail.com
+
+=head1 LICENSE AND COPYRIGHT
+
+(c) 2012 Peter H. Ezetta
+
+This software is licensed under the BSD 3 Clause license.
+
+http://opensource.org/licenses/BSD-3-Clause
+
 =cut

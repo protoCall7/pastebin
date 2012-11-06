@@ -9,7 +9,7 @@
 #         BUGS: ---
 #        NOTES: ---
 #       AUTHOR: Peter H. Ezetta (PE), protoCall7@gmail.com
-# ORGANIZATION:
+# ORGANIZATION: ---
 #      VERSION: 0.1
 #      CREATED: 11/06/2012 09:36:08
 #     REVISION: ---
@@ -44,5 +44,25 @@ This documentation refers to Pastebin version 0.1.
 
 	use Pastebin;
 	Pastebin->run();
+
+=head1 DESCRIPTION
+
+=head1 SUBROUTINES/METHODS
+
+=head1 DIAGNOSTICS
+
+=head1 CONFIGURATION AND ENVIRONMENT
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+Peter H. Ezetta (PE), protoCall7@gmail.com
+
+=head1 LICENSE AND COPYRIGHT
 
 =cut
