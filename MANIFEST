@@ -1,0 +1,8 @@
+Makefile.PL
+MANIFEST
+bin/pastebin.pl
+lib/Pastebin.pm
+lib/Pastebin/Login.pm
+lib/Pastebin/Command/delete.pm
+lib/Pastebin/Command/info.pm
+lib/Pastebin/Command/list.pm
