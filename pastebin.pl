@@ -23,6 +23,9 @@ use warnings;
 use version; our $VERSION = qv('0.1');
 use Pastebin;
 
+#-------------------------------------------------------------------------------
+#  Dispatch our application class via the run method.
+#-------------------------------------------------------------------------------
 Pastebin->run;
 
 __END__
