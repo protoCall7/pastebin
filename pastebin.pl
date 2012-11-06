@@ -42,15 +42,15 @@ This documentation refers to pastebin.pl version 0.1
 
 =head1 USAGE
 
-Display list of commands:
+=head2 Display list of commands:
 	
 	$ ./pastebin.pl commands
 
-Get help for a command:
+=head2 Get help for a command:
 	
 	$ ./pastebin.pl help <command>
 
-Display user information and settings:
+=head2 Display user information and settings:
 
 	$ ./pastebin.pl info --user <username> --pass <password>
 
