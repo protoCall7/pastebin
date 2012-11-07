@@ -20,7 +20,6 @@ use strict;
 use warnings;
 use 5.010;
 use version; our $VERSION = qv('0.1');
-use URI::Escape;
 use LWP::Curl;
 
 sub login {

@@ -42,34 +42,16 @@ This documentation refers to pastebin.pl version 0.1
 
 =head1 USAGE
 
-=head2 Display list of commands:
-	
-	$ ./pastebin.pl commands
+	# Display list of commands
+	pastebin.pl commands
 
-=head2 Get help for a command:
-	
-	$ ./pastebin.pl help <command>
+	# Get help for a command
+	pastebin.pl help <command>
 
-=head2 Display user information and settings:
-
-	$ ./pastebin.pl info --user <username> --pass <password>
-
-=head1 REQUIRED ARGUMENTS
-
-info command:
-
-	--user | -u
-	--pass | -p
+	# Display user information and settings:
+	pastebin.pl info --user <username> --pass <password>
 
 =head1 DESCRIPTION
-
-=head1 OPTIONS
-
-=head1 DIAGNOSTICS
-
-=head1 EXIT STATUS
-
-=head1 CONFIGURATION
 
 =head1 DEPENDENCIES
 

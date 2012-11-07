@@ -32,7 +32,6 @@ WriteMakefile(
     PREREQ_PM    => {
         "App::Cmd"    => 0,
         "LWP::Curl"   => 0,
-        "URI::Escape" => 0,
 		"Test::More"  => 0,
     }
 );
