@@ -79,6 +79,8 @@ sub execute {
         'api_paste_code' => $api_paste_code,
     };
 
+    $hash_form = { 'api_paste_name' => $api_paste_name } if $api_paste_name;
+
     my $content = $curl->post( $url, $hash_form, $referrer );
     say $content;
 

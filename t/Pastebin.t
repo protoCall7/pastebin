@@ -35,3 +35,7 @@ like(
 is( $result->stderr, '', 'No output on STDERR' );
 is( $result->error, undef, 'Throw no exceptions' );
 is( $result->exit_code, 0, 'Return 0' );
+
+#-------------------------------------------------------------------------------
+#  Try with invalid subcommand
+#-------------------------------------------------------------------------------
