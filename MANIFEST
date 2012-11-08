@@ -3,6 +3,7 @@ MANIFEST
 bin/pastebin.pl
 lib/Pastebin.pm
 lib/Pastebin/Login.pm
+lib/Pastebin/Validate.pm
 lib/Pastebin/Command/delete.pm
 lib/Pastebin/Command/info.pm
 lib/Pastebin/Command/list.pm
@@ -11,3 +12,4 @@ lib/Pastebin/Command/raw.pm
 lib/Pastebin/Command/trend.pm
 t/Login.t
 t/Pastebin.t
+t/Validate.t

@@ -23,6 +23,7 @@ use version; our $VERSION = qv('0.1');
 use LWP::Curl;
 use Pastebin -command;
 use Pastebin::Login;
+use Pastebin::Validate;
 
 sub opt_spec {
     return (
@@ -42,8 +43,10 @@ sub validate_args {
         $self->usage_error("Privacy setting requires username and password")
             unless ( $opt->{'user'} && $opt->{'pass'} );
     }
-
-    $self->usage_error("Filename required") unless ( $opt->{'file'} );
+    if ( $opt->{'expire'} ) {
+        $self->usage_error("Invalid expiration.  See pastebin.pl(1)")
+            unless Pastebin::Validate::validate_expire( $opt->{'expire'} );
+    }
 
     return;
 }
@@ -79,7 +82,11 @@ sub execute {
         'api_paste_code' => $api_paste_code,
     };
 
-    $hash_form = { 'api_paste_name' => $api_paste_name } if $api_paste_name;
+    $hash_form->{'api_paste_name'} = $api_paste_name
+        if $api_paste_name;
+
+    $hash_form->{'api_paste_expire_date'} = $api_paste_expire_date
+        if $api_paste_expire_date;
 
     my $content = $curl->post( $url, $hash_form, $referrer );
     say $content;
@@ -97,4 +104,3 @@ __END__
 
 Pastebin::Command::paste - paste a file to pastebin.com
 
-=cut
