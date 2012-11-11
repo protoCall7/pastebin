@@ -39,13 +39,16 @@ sub opt_spec {
 
 sub validate_args {
     my ( $self, $opt, $args ) = @_;
+
+    my $validator = Pastebin::Validate->new();
+
     if ( $opt->{'privacy'} ) {
         $self->usage_error("Privacy setting requires username and password")
             unless ( $opt->{'user'} && $opt->{'pass'} );
     }
     if ( $opt->{'expire'} ) {
         $self->usage_error("Invalid expiration.  See pastebin.pl(1)")
-            unless Pastebin::Validate::validate_expire( $opt->{'expire'} );
+            unless $validator->validate_expire( $opt->{'expire'} );
     }
 
     return;

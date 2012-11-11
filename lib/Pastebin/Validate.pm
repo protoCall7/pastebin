@@ -20,8 +20,15 @@ use strict;
 use warnings;
 use version; our $VERSION = qv('0.1');
 
+sub new {
+    my $class = shift;
+    my $self  = {};
+    return bless $self, $class;
+}
+
 sub validate_expire {
-    my $usr_exp = shift;
+    my ( $self, $usr_exp ) = @_;
+
     my @list    = qw ( N 10M 1H 1D 1M );
     my $ret     = 0;
 

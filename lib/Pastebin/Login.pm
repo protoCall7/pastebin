@@ -19,10 +19,17 @@ package Pastebin::Login;
 use strict;
 use warnings;
 use 5.010;
-use version; our $VERSION = qv('0.1');
+
 use LWP::Curl;
 
-sub login {
+sub new {
+	my $class = shift;
+	my $self = {};
+	return bless $self, $class;
+}
+
+sub set_user_key {
+	my $self = shift;
     my @args              = @_;
     my $api_dev_key       = 'ebb64cafa134d25d1ea1ce43a47589bf';
     my $api_user_name     = $args[0];
@@ -42,7 +49,13 @@ sub login {
     };
 
     my $content = $curl->post( $url, $hash_form, $referrer );
-    return $content;
+    $self->{'user_key'} = $content;
+	return;
+}
+
+sub get_user_key {
+	my $self = shift;
+	return $self->{'user_key'};
 }
 
 1;
