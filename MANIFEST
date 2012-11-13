@@ -1,4 +1,5 @@
 Makefile.PL
+INSTALL
 MANIFEST
 bin/pastebin.pl
 lib/Pastebin.pm

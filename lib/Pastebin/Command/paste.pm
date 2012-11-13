@@ -69,8 +69,11 @@ sub execute {
     my $url      = 'http://pastebin.com/api/api_post.php';
     my $referrer = 'http://techmasochism.blogspot.com';
 
-    $api_user_key = Pastebin::Login::login( $opt->{'user'}, $opt->{'pass'} )
-        if ( $opt->{'user'} && $opt->{'pass'} );
+    if ( $opt->{'user'} && $opt->{'pass'} ) {
+        my $login = Pastebin::Login->new();
+        $login->set_user_key( $opt->{'user'}, $opt->{'pass'} );
+        $api_user_key = $login->get_user_key();
+    }
 
     open( my $fh, "<", $opt->{'file'} );
     foreach (<$fh>) {

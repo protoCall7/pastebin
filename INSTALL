@@ -1,0 +1,14 @@
+The installation is very simple and only requires a few steps.
+
+1) $ perl Makefile.PL
+
+This will generate a makefile.  Pay attention to it's output, as it will inform
+you of any missing module dependancies.  Modules can be installed as follows:
+
+$ sudo cpan -i <module::name>
+
+Once all module dependencies have been met:
+
+2) $ make
+3) $ make test
+4) $ sudo make install
