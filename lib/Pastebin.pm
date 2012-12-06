@@ -19,12 +19,12 @@ package Pastebin;
 use strict;
 use warnings;
 use version; our $VERSION = qv('0.1');
-use App::Cmd::Setup -app;
 
 #-------------------------------------------------------------------------------
 #  Using App::Cmd::Setup with the -app flag automatically generates an App::Cmd
 #  application class.
 #-------------------------------------------------------------------------------
+use App::Cmd::Setup -app;
 
 1;
 
